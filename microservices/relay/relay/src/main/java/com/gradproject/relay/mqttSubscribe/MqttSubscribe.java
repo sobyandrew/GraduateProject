@@ -1,16 +1,14 @@
 package com.gradproject.relay.mqttSubscribe;
 
-import com.hivemq.client.mqtt.MqttClient;
+import com.gradproject.relay.kafkaConnect.SendKafka;
 import com.hivemq.client.mqtt.mqtt5.message.publish.Mqtt5Publish;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.function.BiConsumer;
 
@@ -18,10 +16,12 @@ import java.util.function.BiConsumer;
 @Slf4j
 public class MqttSubscribe {
     private final MqttConnection mqtt;
+    private final SendKafka sendKafka;
 
     @Autowired
-    public MqttSubscribe(MqttConnection mqtt) {
+    public MqttSubscribe(MqttConnection mqtt, SendKafka sendKafka) {
         this.mqtt = mqtt;
+        this.sendKafka = sendKafka;
     }
 
     public void subscribeMqtt(BiConsumer<String, String> callback) throws ExecutionException, InterruptedException {
@@ -52,6 +52,8 @@ public class MqttSubscribe {
 
         log.trace("here, on topic: " + topic);
         log.trace("here payload: " + payload);
+        log.trace("sending to kafka");
+        sendKafka.sendKafkaMessage(payload);
     }
 
 
