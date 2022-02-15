@@ -37,7 +37,7 @@ def createClientAndCallSend(clientNum):
     while x:
         count = count + 1
         send(cli, clientUUID, clientNum)
-        sleep(0.001)
+        #sleep(0.001)
         if count >= numMessagesPerDevice:
             return 
 

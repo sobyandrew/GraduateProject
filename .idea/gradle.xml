@@ -25,6 +25,16 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/ingest/ingest" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/microservices/ingest/ingest" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/normalize/normalize" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
         <option name="modules">

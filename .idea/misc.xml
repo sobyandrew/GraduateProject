@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/demo" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/access/access" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/export/export" />
+    <file type="web" url="file://$PROJECT_DIR$/microservices/ingest/ingest" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/normalize/normalize" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/query/query" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/rawdata/rawdata" />
