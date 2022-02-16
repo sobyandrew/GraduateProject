@@ -7,8 +7,9 @@ import time
 from time import sleep
 from random import randrange
 
-numSimulatedDevices = 100
-numMessagesPerDevice = 100
+numSimulatedDevices = 1000
+numMessagesPerDevice = 1000
+
 file = open('log_temp.csv')
 
 csvreader = csv.reader(file)
@@ -37,7 +38,7 @@ def createClientAndCallSend(clientNum):
     while x:
         count = count + 1
         send(cli, clientUUID, clientNum)
-        #sleep(0.001)
+        sleep(0.01)
         if count >= numMessagesPerDevice:
             return 
 
