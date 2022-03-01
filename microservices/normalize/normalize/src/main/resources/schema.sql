@@ -5,6 +5,6 @@ CREATE table if not exists dataTest (
     PRIMARY KEY (deviceId, time)
 );
 
-insert into dataTest (deviceId, time, deviceInfo) VALUES ('test', current_timestamp, '1');
+insert into dataTest (deviceId, time, deviceInfo) VALUES ('test12', current_timestamp, '1');
 
-select * from dataTest
+select * from dataTest;
