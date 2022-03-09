@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -43,7 +44,7 @@ public class RestWebController {
   @GetMapping(path = "/genDevice")
   public ResponseEntity<String> genDevice(){
     log.trace("genning device");
-    DeviceInfo di = new DeviceInfo("1", "now", "device");
+    DeviceInfo di = new DeviceInfo(UUID.randomUUID(),"1", "now", "80", "81");
     repo.save(di);
     return new ResponseEntity<>(HttpStatus.OK);
   }

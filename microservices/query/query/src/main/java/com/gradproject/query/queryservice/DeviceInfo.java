@@ -1,12 +1,12 @@
-package com.gradproject.export.entity;
+package com.gradproject.query.queryservice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 import java.util.UUID;
+
 
 @Data
 @NoArgsConstructor

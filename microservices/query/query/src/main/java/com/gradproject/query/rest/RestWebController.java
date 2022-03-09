@@ -38,6 +38,13 @@ public class RestWebController {
     return new ResponseEntity<>(HttpStatus.OK);
   }
 
+  @PostMapping(path = "/device", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<String> postTempData(@RequestBody String device) {
+    log.trace("Device Data to store {}", device);
+    qs.storeDevice(device);
+    return new ResponseEntity<>("stored data", HttpStatus.OK);
+  }
+
   @Data
   public static class QueryRequest implements Serializable {
     private String query;

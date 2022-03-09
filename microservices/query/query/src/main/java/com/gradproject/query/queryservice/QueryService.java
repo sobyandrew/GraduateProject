@@ -1,5 +1,7 @@
 package com.gradproject.query.queryservice;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -60,6 +63,28 @@ public class QueryService {
     } catch (SQLException e) {
       log.trace(e.getMessage());
       return "bad query";
+    }
+  }
+
+  public void storeDevice(String device) {
+    try {
+      log.trace("device message received {}", device);
+
+      log.trace("parsing device message");
+      ObjectMapper mapper = new ObjectMapper();
+      DeviceInfo di = mapper.readValue(device, DeviceInfo.class);
+
+      log.trace("device info parsed: " + di.toString());
+      Connection c = ds.getConnection();
+
+      Statement s = c.createStatement();
+      StringBuilder sb = new StringBuilder();
+      sb.append("INSERT INTO deviceInfo(id, deviceId, time, humidity, temperature) VALUES (\'");
+      sb.append(di.id + "\', \'" +  di.deviceId + "\', \'" + di.timestamp +"\', \'" + di.humidity + "\', \'" + di.temperature + "\');");
+      log.trace(sb.toString());
+      s.execute(sb.toString());
+    } catch (SQLException | JsonProcessingException e) {
+      e.printStackTrace();
     }
   }
 }
