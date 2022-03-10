@@ -51,6 +51,13 @@ public class RestWebController {
     return new ResponseEntity<>(resc, HttpStatus.OK);
   }
 
+  @GetMapping(path = "/alarm/getAlarms")
+  public ResponseEntity<String> getAlarms() {
+    log.trace("get alarms from alarm service");
+    return new ResponseEntity<>(
+            rt.getForObject("http://localhost:8083/getAlarms", String.class), HttpStatus.OK);
+  }
+
   @GetMapping(path = "/query/health")
   public ResponseEntity<String> getQueryHealth() {
     log.trace("get raw data from export");
@@ -63,6 +70,13 @@ public class RestWebController {
     log.trace("get export health");
     return new ResponseEntity<>(
         rt.getForObject("http://localhost:8082/health", String.class), HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/alarm/health")
+  public ResponseEntity<String> getAlarmHealth() {
+    log.trace("get alarm health");
+    return new ResponseEntity<>(
+            rt.getForObject("http://localhost:8083/health", String.class), HttpStatus.OK);
   }
 
   @Data
