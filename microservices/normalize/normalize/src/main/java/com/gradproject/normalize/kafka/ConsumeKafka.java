@@ -1,21 +1,55 @@
 package com.gradproject.normalize.kafka;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gradproject.normalize.entity.DeviceInfo;
+import com.gradproject.normalize.normalizeservice.NormalizeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Component
 public class ConsumeKafka {
     private Integer count = 0;
-    public ConsumeKafka(){
+    private final List<DeviceInfo> devices;// = new ArrayList<>();
+    private final ObjectMapper mapper;
+    private final NormalizeService normalService;
+    public ConsumeKafka(NormalizeService normalService){
+        this.normalService = normalService;
 
+        devices = new ArrayList<>();
+        mapper = new ObjectMapper();
     }
 
     @KafkaListener(topics = "normal", groupId = "normal-service")
     public void ingestMessage(String message){
         count++;
-        log.trace( count.toString()+ " messages received in normal service {}", message);
-        //TODO normalize it and store in postgres
+        //log.trace( count.toString()+ " messages received in normal service {}", message);
+        try {
+            DeviceInfo di = mapper.readValue(message, DeviceInfo.class);
+            devices.add(di);
+            if(Integer.valueOf(di.getTemperature()) > 35){
+                log.trace("found temperature alert {}", di);
+                //TODO send to alert service
+            }
+            if(Integer.valueOf(di.getHumidity()) > 50){
+                log.trace("found humidity alert {}", di);
+                //Todo send to alert service
+            }
+        } catch (JsonProcessingException e) {
+            log.trace(e.getMessage());
+            return;
+        }
+
+
+
+        if(devices.size() > 100){
+            normalService.storeDevices(devices);
+            devices.clear();
+        }
     }
 }

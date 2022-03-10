@@ -23,6 +23,7 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
 //    implementation 'org.springframework.kafka:spring-kafka:2.7.3'
     implementation 'com.hivemq:hivemq-mqtt-client:1.2.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.1'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

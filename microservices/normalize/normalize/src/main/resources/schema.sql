@@ -23,4 +23,6 @@ VALUES ('test12', current_timestamp, '1');
 select *
 from dataTest;
 
+select * from deviceInfo;
+
 

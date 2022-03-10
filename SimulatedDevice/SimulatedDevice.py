@@ -3,12 +3,13 @@ import paho.mqtt.client as mqtt
 import threading
 import csv
 import datetime
+import uuid
 import time
 from time import sleep
 from random import randrange
 
-numSimulatedDevices = 1000
-numMessagesPerDevice = 1000
+numSimulatedDevices = 10
+numMessagesPerDevice = 11
 
 file = open('log_temp.csv')
 
@@ -20,18 +21,22 @@ for row in csvreader:
     rows.append(row)
 file.close()
 
+
 def getMessage(clientNum):
     randRow = randrange(len(rows))
-    dataString = "{\"temperature\":" + "\"" + rows[randRow][0]+ "\""+ ", \"humidity\":" + "\"" + rows[randRow][1]+ "\"" + "}"
-    retStr = "{\"deviceId\":\""  + clientNum + "\", \"time\":\"" + str(datetime.datetime.now()) +"\", \"data\":" + dataString+ "}"
+    retStr = "{\"id\":\"" + str(uuid.uuid4()) + "\", \"deviceId\":\"" + clientNum + "\", \"timestamp\":\"" \
+             + str(datetime.datetime.now()) + "\", \"humidity\":" + "\"" + rows[randRow][1] + "\", \"temperature\":" + "\"" + rows[randRow][0] + "\"" + "}"
+    #print(retStr)
     return retStr
+
 
 def send(client, topic, clientNum):
     client.publish(topic, getMessage(clientNum), qos=0)
-    
+
+
 def createClientAndCallSend(clientNum):
     clientUUID = "client" + str(uuid4())
-    cli =  mqtt.Client(clientUUID, True)
+    cli = mqtt.Client(clientUUID, True)
     cli.connect("localhost", 443, 60)
     x = True
     count = 0
@@ -40,7 +45,8 @@ def createClientAndCallSend(clientNum):
         send(cli, clientUUID, clientNum)
         sleep(0.01)
         if count >= numMessagesPerDevice:
-            return 
+            return
+
 
 threads = []
 start_time = datetime.datetime.now()
