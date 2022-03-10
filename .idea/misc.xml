@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/demo" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/access/access" />
+    <file type="web" url="file://$PROJECT_DIR$/microservices/alarm/alarm" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/export/export" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/ingest/ingest" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/normalize/normalize" />
