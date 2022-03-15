@@ -5,19 +5,19 @@ import com.gradproject.export.export.ExportService;
 import com.gradproject.export.repo.MongoRepo;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.ServletContextResource;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 
+@CrossOrigin
 @Slf4j
 @RestController
 public class RestWebController {
@@ -53,13 +53,34 @@ public class RestWebController {
     return new ResponseEntity<>(HttpStatus.OK);
   }
 
+  @GetMapping(path = "/test/getAllDevices", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+  public @ResponseBody byte[] getAllDevicesTest(){
+    log.trace("get all devices Test");
+    List<DeviceInfo> devices = repo.findAll();
+    File f = es.createCSV(devices);
+    File csvF = es.getCSV(f);
+    log.trace(f.getPath());
+    log.trace(f.getAbsolutePath());
+    try {
+      InputStream in = getClass().getResourceAsStream(f.getAbsolutePath());
+      InputStreamResource resource = new InputStreamResource(new FileInputStream(csvF));
+      FileInputStream fs = new FileInputStream(csvF);
+
+      return fs.readAllBytes();
+    }catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
   @GetMapping(path = "/getAllDevices")
   public ResponseEntity<Resource> getAllDevices(){
     log.trace("get all devices");
     List<DeviceInfo> devices = repo.findAll();
     File f = es.createCSV(devices);
+    File f2 = es.getCSV(f);
     try {
-      InputStreamResource resource = new InputStreamResource(new FileInputStream(f));
+      InputStreamResource resource = new InputStreamResource(new FileInputStream(f2));
       return new ResponseEntity<>(resource,HttpStatus.OK);
     } catch (FileNotFoundException e) {
       e.printStackTrace();

@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @Slf4j
 @RestController
 public class RestWebController {
