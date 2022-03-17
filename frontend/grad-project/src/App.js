@@ -29,19 +29,19 @@ function App() {
                     <Navbar.Collapse>
                         <Nav className="test">
                             <Nav.Link as={NavLink} to="/" exact className="test">Home</Nav.Link>
-                            <Nav.Link as={NavLink} to="/exports" className="test">Export</Nav.Link>
+                            {/*<Nav.Link as={NavLink} to="/exports" className="test">Export</Nav.Link>*/}
                             <Nav.Link as={NavLink} to="/query" className="test">Query</Nav.Link>
                             <Nav.Link as={NavLink} to="/alarm"className="test" >Alarm</Nav.Link>
-                            <Nav.Link as={NavLink} to="/export2"className="test" >Export2</Nav.Link>
+                            <Nav.Link as={NavLink} to="/exports"className="test" >Export</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
                 <Routes>
                     <Route path="/" exact element={<Home/>}/>
-                    <Route path="/exports" exact element={<Exports/>}/>
+                    {/*<Route path="/exports" exact element={<Exports/>}/>*/}
                     <Route path="/query" exact element={<Query/>}/>
                     <Route path="/alarm" exact element={<Alarm/>}/>
-                    <Route path="/export2" exact element={<Export2/>}/>
+                    <Route path="/exports" exact element={<Export2/>}/>
                 </Routes>
             </div>
         </Router>

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./Query.css";
 
 function Query() {
     const [query, setQuery] = useState(" ")
@@ -7,6 +8,7 @@ function Query() {
 
         setQuery(event.target.value);
     }
+
     const handleSubmit = async (event) => {
         // console.log(event);
         event.preventDefault();
@@ -16,7 +18,7 @@ function Query() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({query: query.toString()})
         };
-        const resp = await fetch('http://localhost:8081/query', requestOptions)
+        const resp = await fetch('http://localhost:8080/query', requestOptions)
             .then(response => response.json())
             .then(data => setDevices(data.queryResults));
 
@@ -25,8 +27,11 @@ function Query() {
 
     console.log(devices);
     return (
-        <div>
-            Query home page
+        <div className="main">
+            Query
+            <br/>
+            <br/>
+            <p>Submit a Query to the database to receive json responses ex. Select * from deviceInfo;</p>
 
             <form onSubmit={handleSubmit}>
                 <input type="text" value={query} onInput={e => setQuery(e.target.value)}/>
