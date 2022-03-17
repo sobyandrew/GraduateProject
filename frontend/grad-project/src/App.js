@@ -5,6 +5,7 @@ import {Nav, Navbar} from "react-bootstrap";
 import Alarm from "./pages/Alarm";
 import Query from "./pages/Query";
 import Exports from "./pages/Exports";
+import Export2 from "./pages/Export2";
 import Home from "./pages/Home";
 
 import {
@@ -31,6 +32,7 @@ function App() {
                             <Nav.Link as={NavLink} to="/exports" className="test">Export</Nav.Link>
                             <Nav.Link as={NavLink} to="/query" className="test">Query</Nav.Link>
                             <Nav.Link as={NavLink} to="/alarm"className="test" >Alarm</Nav.Link>
+                            <Nav.Link as={NavLink} to="/export2"className="test" >Export2</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -39,6 +41,7 @@ function App() {
                     <Route path="/exports" exact element={<Exports/>}/>
                     <Route path="/query" exact element={<Query/>}/>
                     <Route path="/alarm" exact element={<Alarm/>}/>
+                    <Route path="/export2" exact element={<Export2/>}/>
                 </Routes>
             </div>
         </Router>

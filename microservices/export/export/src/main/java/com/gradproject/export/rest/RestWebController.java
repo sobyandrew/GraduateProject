@@ -80,7 +80,7 @@ public class RestWebController {
     File f = es.createCSV(devices);
     File f2 = es.getCSV(f);
     try {
-      InputStreamResource resource = new InputStreamResource(new FileInputStream(f2));
+      InputStreamResource resource = new InputStreamResource(new FileInputStream(f));
       return new ResponseEntity<>(resource,HttpStatus.OK);
     } catch (FileNotFoundException e) {
       e.printStackTrace();
