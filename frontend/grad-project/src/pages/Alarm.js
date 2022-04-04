@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import './alarm.css';
+import './Alarm.css';
 
 function Alarm() {
     const [alarms, setAlarms] = useState([])
-
+    let count = 1;
     useEffect(() => {
         fetch('http://localhost:8083/getAlarms')
             .then(response => response.json())
@@ -12,13 +12,17 @@ function Alarm() {
 
     console.log(alarms)
     return (
-        <div className="alarm">
-            <h2>Alarm</h2>
+        <div className="main">
+            <h2>Alarm Service</h2>
             <br/>
-            <p>This is the alarms page and will show the 10 most recent alarms</p>
-            <div>{alarms.map(s => (
-                <p key={s.id}>{'\u007B'} "uuid": "{s.id}","deviceId": "{s.deviceId}", "timestamp": "{s.timestamp}", "temperature":
-                    "{s.temperature}", "humidity": "{s.humidity}", "Severity": "{s.severity}"}</p>))}
+            <div className="area">
+                <h5> Recent Alarms</h5>
+                {alarms.map(s => (
+                    <p className="alarms" key={s.id}>Alarm {count++}: {'\u007B'} "uuid": "{s.id}","deviceId":
+                        "{s.deviceId}", "timestamp": "{s.timestamp}", "temperature":
+                        "{s.temperature}", "humidity": "{s.humidity}", "Severity": "{s.severity}"}</p>
+                ))}
+
             </div>
 
         </div>

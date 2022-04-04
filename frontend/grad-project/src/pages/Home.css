@@ -1,0 +1,32 @@
+.main{
+    padding-top: 10px;
+    padding-left: 25px;
+    background-color: #e3e0cf;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+}
+
+.area{
+    background-color: #c2b09d;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+.text{
+    margin-left: 5px;
+}
+
+.items{
+    align-items: center;
+    display: flex;
+}
+
+img {
+    max-width: 300px;
+}

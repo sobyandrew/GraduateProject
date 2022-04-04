@@ -8,8 +8,8 @@ import time
 from time import sleep
 from random import randrange
 
-numSimulatedDevices = 10
-numMessagesPerDevice = 11
+numSimulatedDevices = 100
+numMessagesPerDevice = 110
 
 file = open('log_temp.csv')
 

@@ -1,16 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./Query.css";
 
 function Query() {
     const [query, setQuery] = useState(" ")
     const [devices, setDevices] = useState([])
-    const handleChange = (event) => {
-
-        setQuery(event.target.value);
-    }
+    let row = 1;
 
     const handleSubmit = async (event) => {
-        // console.log(event);
+        row = 1;
         event.preventDefault();
         console.log(query);
         const requestOptions = {
@@ -18,7 +15,7 @@ function Query() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({query: query.toString()})
         };
-        const resp = await fetch('http://localhost:8080/query', requestOptions)
+        await fetch('http://localhost:8080/query', requestOptions)
             .then(response => response.json())
             .then(data => setDevices(data.queryResults));
 
@@ -28,18 +25,29 @@ function Query() {
     console.log(devices);
     return (
         <div className="main">
-            Query
+            <h2>Query Service</h2>
             <br/>
+
+            <h5>Submit a Query to receive results ex. Select * from deviceInfo;</h5>
             <br/>
-            <p>Submit a Query to the database to receive json responses ex. Select * from deviceInfo;</p>
 
             <form onSubmit={handleSubmit}>
-                <input type="text" value={query} onInput={e => setQuery(e.target.value)}/>
+                <input size="75" type="text" value={query} onInput={e => setQuery(e.target.value)}/>
+                <br/>
+                <br/>
                 <input type="submit" value="Submit Query" onClick={handleSubmit}/>
             </form>
-            <div>{devices.map(s => (
-                <p>{'\u007B'} "uuid": "{s.id}","deviceId": "{s.deviceid}", "timestamp": "{s.time}", "temperature":
-                    "{s.temperature}", "humidity": "{s.humidity}"}</p>))}
+            <br/>
+            <div className="area">
+                <h5>Query Results</h5>{devices.map(s => (
+                <div>
+                    Row {row++}:
+
+                    <p className="devices"> {'\u007B'} "uuid": "{s.id}","deviceId": "{s.deviceid}", "timestamp":
+                        "{s.time}", "temperature":
+                        "{s.temperature}", "humidity": "{s.humidity}"} </p>
+                    <br/>
+                </div>))}
             </div>
         </div>
     );

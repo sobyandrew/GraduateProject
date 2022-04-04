@@ -1,6 +1,8 @@
 
 .main{
-    padding-left: 20px;
-    padding-top:  5px;
-    align-self: center;
+    padding-top: 10px;
+    padding-left: 25px;
+    background-color: #e3e0cf;
+    min-width: 100vw;
+    min-height: 100vh;
 }

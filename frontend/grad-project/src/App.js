@@ -1,16 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Nav, Navbar} from "react-bootstrap";
 import Alarm from "./pages/Alarm";
 import Query from "./pages/Query";
-import Exports from "./pages/Exports";
-import Export2 from "./pages/Export2";
+import Export from "./pages/Export";
 import Home from "./pages/Home";
 
 import {
     BrowserRouter as Router,
-    Link,
     NavLink,
     Route,
     Routes
@@ -18,8 +15,9 @@ import {
 
 function App() {
     return (
+        <div className="backColor">
         <Router>
-            <div>
+            <div className="backColor">
                 <Navbar bg="dark" variant="dark" sticky="top" >
                     <Navbar.Brand className="gradbrand">
                         Graduate Project
@@ -29,7 +27,6 @@ function App() {
                     <Navbar.Collapse>
                         <Nav className="test">
                             <Nav.Link as={NavLink} to="/" exact className="test">Home</Nav.Link>
-                            {/*<Nav.Link as={NavLink} to="/exports" className="test">Export</Nav.Link>*/}
                             <Nav.Link as={NavLink} to="/query" className="test">Query</Nav.Link>
                             <Nav.Link as={NavLink} to="/alarm"className="test" >Alarm</Nav.Link>
                             <Nav.Link as={NavLink} to="/exports"className="test" >Export</Nav.Link>
@@ -38,13 +35,13 @@ function App() {
                 </Navbar>
                 <Routes>
                     <Route path="/" exact element={<Home/>}/>
-                    {/*<Route path="/exports" exact element={<Exports/>}/>*/}
                     <Route path="/query" exact element={<Query/>}/>
                     <Route path="/alarm" exact element={<Alarm/>}/>
-                    <Route path="/exports" exact element={<Export2/>}/>
+                    <Route path="/exports" exact element={<Export/>}/>
                 </Routes>
             </div>
         </Router>
+</div>
     );
 }
 

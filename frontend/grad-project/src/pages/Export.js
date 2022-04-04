@@ -1,12 +1,12 @@
 import React from "react";
 import {CSVLink} from "react-csv";
 import './Export.css';
-class Export2 extends React.Component {
+class Export extends React.Component {
     csvLink = React.createRef()
     state = {data: [], deviceList: "", devices: []}
 
     fetchData = async () => {
-        if(this.state.deviceList == ""){
+        if(this.state.deviceList === ""){
            console.log("device list is empty")
         } else if (!(this.state.deviceList.includes(","))) {
             console.log("doesnt include multiple devices")
@@ -54,43 +54,22 @@ class Export2 extends React.Component {
         }
     }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     if (!(this.state.deviceList.includes(","))) {
-    //         console.log("doesnt include multiple devices")
-    //         let arr = []
-    //         arr.push(this.state.deviceList)
-    //         console.log(arr)
-    //         this.setState({devices: arr})
-    //         console.log(this.state.devices)
-    //     } else {
-    //         this.setState({devices: this.state.deviceList.split(",")})
-    //         console.log(this.state.devices)
-    //         console.log(this.state.deviceList.split(","))
-    //     }
-    //     console.log(this.state.deviceList)
-    //     // console.log(this.state.devices.split(","))
-    //     //  let arr = this.state.devices.split(",")
-    //     //  console.log(arr)
-    //     //  this.setState({devices: arr})
-    //     //  console.log(this.state.devices)
-    // }
 
     render() {
         return (
             <div className="main">
-                Export Page
-                <br/><br/>
+                <h2>Export Service</h2>
+                <br/>
 
-                <p>Enter device id's in the input box below for export separated by "," ex. 1,2,3 </p>
-                <p>If no devices are entered, then an export of all devices will be downloaded.</p>
+                <h5>Enter device id's in the input box below for export separated by "," ex. 1,2,3 </h5>
+                <h5>If no devices are entered, then an export of all devices will be downloaded.</h5>
+                <br/>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.deviceList}
                            onInput={e => this.setState({deviceList: e.target.value})}/>
-                    {/*<input type="submit" value="Click to Confirm Export List" onClick={this.handleSubmit}/>*/}
                 </form>
                 <br/>
-                <button onClick={this.fetchData}>Download Export CSV</button>
+                <button onClick={this.fetchData}>Download CSV</button>
 
                 <CSVLink
                     data={this.state.data}
@@ -104,4 +83,4 @@ class Export2 extends React.Component {
     }
 }
 
-export default Export2;
+export default Export;

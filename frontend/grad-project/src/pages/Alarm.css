@@ -1,12 +1,11 @@
-.main{
+.alarm{
     padding-top: 10px;
     padding-left: 25px;
     background-color: #e3e0cf;
     min-width: 100vw;
     min-height: 100vh;
 }
-
-.devices{
+.alarms{
     margin-left: 5px;
     display: inline-block;
     background-color: #c5d5cb;
@@ -14,10 +13,10 @@
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-
 }
-
 .area{
     background-color: #c2b09d;
     display: inline-block;
+
+    margin-right: 40%;
 }
