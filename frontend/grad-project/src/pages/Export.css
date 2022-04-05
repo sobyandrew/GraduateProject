@@ -6,3 +6,10 @@
     min-width: 100vw;
     min-height: 100vh;
 }
+
+.area {
+    background-color: #c2b09d;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+}

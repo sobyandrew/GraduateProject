@@ -9,7 +9,7 @@ import winnie4 from "./pictures/winnie4.jpg"
 function Home() {
     return (
         <div className="main">
-            <h3>Andrew Soby's Graduate Project</h3>
+            <h3>Andrew Soby's Graduate Project: W.I.N.S.T.O.N Project</h3>
 
             <br/>
             <div className="area"><h5 className="text">Brief Project Description</h5>
@@ -17,6 +17,7 @@ function Home() {
                 <p>1. Python Simulated Device - This device uses real iot data to be able to burst send thousands of messages to the pipeline.</p>
                 <p>2. Infrastructure - This is the structure of the pipeline and it includes an MQTT Broker, Kafka Message Queue, Postgresql, and MongoDB.</p>
                 <p>3. Microservices - Most of these microservices are not user facing but are necessary to enable an event driven architecture.</p>
+                <p>I Have deliberated carefully on a project name and have settled on W.I.N.S.T.O.N after my dog named Winston. It stands for When IoT Needs Systematic Tuning On Nuances or W.I.N.S.T.O.N for short.</p>
             </div>
             <br/>
             <br/>
@@ -41,7 +42,7 @@ function Home() {
                 <p>I have decided to include a dog section into the home page to make the front end experience even more enjoyable as originally I had not planned for a front end.</p>
                 <p>These photos are of my dog Winston who is two and a half years old.</p>
                 <p>The first photo is also the same as the icon of my project. It is a picture of Winston and Me.</p>
-                <img src={winston1} alt="picture of Winston and Andrew"/>
+                <img src={winston1} alt="Winston and Andrew"/>
                 <br/>
                 <br/>
                 <p>This is a picture of Winston enjoying Halloween!</p>

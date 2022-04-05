@@ -20,7 +20,7 @@ function App() {
             <div className="backColor">
                 <Navbar bg="dark" variant="dark" sticky="top" >
                     <Navbar.Brand className="gradbrand">
-                        Graduate Project
+                        W.I.N.S.T.O.N Project
                     </Navbar.Brand>
 
                     <Navbar.Toggle/>

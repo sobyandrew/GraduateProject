@@ -1,12 +1,9 @@
 .alarm{
-    padding-top: 10px;
-    padding-left: 25px;
     background-color: #e3e0cf;
     min-width: 100vw;
     min-height: 100vh;
 }
 .alarms{
-    margin-left: 5px;
     display: inline-block;
     background-color: #c5d5cb;
     border: 1px solid black;
@@ -17,6 +14,4 @@
 .area{
     background-color: #c2b09d;
     display: inline-block;
-
-    margin-right: 40%;
 }

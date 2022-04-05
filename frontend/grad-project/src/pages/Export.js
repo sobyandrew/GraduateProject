@@ -1,13 +1,14 @@
 import React from "react";
 import {CSVLink} from "react-csv";
 import './Export.css';
+
 class Export extends React.Component {
     csvLink = React.createRef()
     state = {data: [], deviceList: "", devices: []}
 
     fetchData = async () => {
-        if(this.state.deviceList === ""){
-           console.log("device list is empty")
+        if (this.state.deviceList === "") {
+            console.log("device list is empty")
         } else if (!(this.state.deviceList.includes(","))) {
             console.log("doesnt include multiple devices")
             let arr = []
@@ -60,9 +61,11 @@ class Export extends React.Component {
             <div className="main">
                 <h2>Export Service</h2>
                 <br/>
-
-                <h5>Enter device id's in the input box below for export separated by "," ex. 1,2,3 </h5>
-                <h5>If no devices are entered, then an export of all devices will be downloaded.</h5>
+                <div className="area">
+                    <h5>Enter device id's in the input box below for export separated by "," ex. 1,2,3 </h5>
+                    <h5>If no devices are entered, then an export of all devices will be downloaded.</h5>
+                </div>
+                <br/>
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.deviceList}

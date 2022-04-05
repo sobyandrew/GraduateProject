@@ -27,10 +27,12 @@ function Query() {
         <div className="main">
             <h2>Query Service</h2>
             <br/>
-
-            <h5>Submit a Query to receive results ex. Select * from deviceInfo;</h5>
+            <div className="area">
+                <h5>Submit a Query to receive results ex. Select * from deviceInfo;</h5>
+            </div>
             <br/>
 
+            <br/>
             <form onSubmit={handleSubmit}>
                 <input size="75" type="text" value={query} onInput={e => setQuery(e.target.value)}/>
                 <br/>
