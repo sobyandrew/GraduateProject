@@ -8,8 +8,11 @@ import time
 from time import sleep
 from random import randrange
 
-numSimulatedDevices = 100
-numMessagesPerDevice = 110
+numSimulatedDevices = 300
+numMessagesPerDevice = 100
+
+# numSimulatedDevices = 600
+# numMessagesPerDevice = 50
 
 file = open('log_temp.csv')
 
@@ -38,14 +41,17 @@ def createClientAndCallSend(clientNum):
     clientUUID = "client" + str(uuid4())
     cli = mqtt.Client(clientUUID, True)
     cli.connect("localhost", 443, 60)
-    x = True
+
     count = 0
-    while x:
-        count = count + 1
+
+    while count < numMessagesPerDevice:
+        # count = count + 1
         send(cli, clientUUID, clientNum)
         sleep(0.01)
-        if count >= numMessagesPerDevice:
-            return
+        # if count >= numMessagesPerDevice:
+        #     return
+        count = count + 1
+
 
 
 threads = []
@@ -64,3 +70,4 @@ time_diff = (end_time - start_time)
 execution_time = time_diff.total_seconds() * 1000
 print(execution_time)
 print("total")
+

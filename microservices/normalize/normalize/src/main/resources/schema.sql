@@ -23,6 +23,8 @@ VALUES ('test12', current_timestamp, '1');
 select *
 from dataTest;
 
-select * from deviceInfo where deviceId like '1';
+select * from deviceInfo where deviceId like '1' limit 200;
+select version();
+select * from deviceInfo;
 
 

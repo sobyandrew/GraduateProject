@@ -14,12 +14,12 @@ import java.util.function.BiConsumer;
 
 @Component
 @Slf4j
-public class MqttSubscribe {
-  private final MqttConnection mqtt;
+public class MqttClientSubscriber {
+  private final MqttClientConnector mqtt;
   private final SendKafka sendKafka;
 
   @Autowired
-  public MqttSubscribe(MqttConnection mqtt, SendKafka sendKafka) {
+  public MqttClientSubscriber(MqttClientConnector mqtt, SendKafka sendKafka) {
     this.mqtt = mqtt;
     this.sendKafka = sendKafka;
   }
@@ -27,10 +27,10 @@ public class MqttSubscribe {
   public void subscribeMqtt(BiConsumer<String, String> callback)
       throws ExecutionException, InterruptedException {
     log.trace("subscribing to mqtt");
-    mqtt.subscribe(payload -> parsePayloadAndRoute(payload, callback));
+    mqtt.subscribe(payload -> getPayloadAndSend(payload, callback));
   }
 
-  private void parsePayloadAndRoute(Mqtt5Publish payload, BiConsumer<String, String> callback) {
+  private void getPayloadAndSend(Mqtt5Publish payload, BiConsumer<String, String> callback) {
     final var payloadBytes = payload.getPayloadAsBytes();
     log.trace("parse payload");
     if (payloadBytes.length == 0) {
@@ -46,14 +46,14 @@ public class MqttSubscribe {
     return;
   }
 
-  public void routeToKafka(String topic, String payload) {
+  public void sendKafka(String topic, String payload) {
     log.trace("sending to kafka");
     sendKafka.sendKafkaMessage(payload);
   }
 
   @EventListener(ApplicationReadyEvent.class)
-  public void run() throws ExecutionException, InterruptedException {
+  public void runOnStartup() throws ExecutionException, InterruptedException {
     log.trace("application ready");
-    subscribeMqtt(this::routeToKafka);
+    subscribeMqtt(this::sendKafka);
   }
 }
