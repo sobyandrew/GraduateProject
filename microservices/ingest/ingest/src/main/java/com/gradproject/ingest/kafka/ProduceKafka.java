@@ -15,12 +15,10 @@ public class ProduceKafka {
     }
 
     public void sendNormal(String data){
-//        log.trace("send message to normalize service");
         kafka.send("normal", data);
     }
 
     public void sendRaw(String data){
-//        log.trace("send message to store raw data service");
         kafka.send("raw", data);
     }
 }
