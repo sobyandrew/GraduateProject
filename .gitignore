@@ -1,2 +1,10 @@
 
 frontend/grad-project/package-lock.json
+Infrastructure/kafka/kafka-logs
+*.xml
+.idea/gradle.xml
+*.xml
+Infrastructure/kafka/zookeeper-data/version-2/log.c4
+Infrastructure/kafka/zookeeper-data/version-2/snapshot.c3
+.idea/dataSources.xml
+.idea/compiler.xml
