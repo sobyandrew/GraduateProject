@@ -12,7 +12,12 @@
     <file type="web" url="file://$PROJECT_DIR$/microservices/rawdata/rawdata" />
     <file type="web" url="file://$PROJECT_DIR$/microservices/relay/relay" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SwUserDefinedSpecifications">
+    <option name="specTypeByUrl">
+      <map />
+    </option>
   </component>
 </project>

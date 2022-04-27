@@ -47,7 +47,7 @@ def createClientAndCallSend(clientNum):
     while count < numMessagesPerDevice:
         # count = count + 1
         send(cli, clientUUID, clientNum)
-        sleep(0.01)
+        #sleep(0.1)
         # if count >= numMessagesPerDevice:
         #     return
         count = count + 1
@@ -69,5 +69,5 @@ end_time = datetime.datetime.now()
 time_diff = (end_time - start_time)
 execution_time = time_diff.total_seconds() * 1000
 print(execution_time)
-print("total")
+print("total messages sent = " +  str((numMessagesPerDevice * numSimulatedDevices)))
 

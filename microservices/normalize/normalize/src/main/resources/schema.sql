@@ -10,4 +10,8 @@ CREATE table if not exists deviceInfo
 
 DELETE from deviceInfo where True;
 
+select * from deviceInfo;
+
+drop table deviceInfo;
+
 

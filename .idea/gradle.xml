@@ -4,9 +4,12 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/access/access" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
+        <option name="gradleJvm" value="corretto-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/access/access" />
@@ -14,9 +17,12 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/alarm/alarm" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
+        <option name="gradleJvm" value="corretto-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/alarm/alarm" />
@@ -24,9 +30,11 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/export/export" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/export/export" />
@@ -34,9 +42,12 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/ingest/ingest" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
+        <option name="gradleJvm" value="18" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/ingest/ingest" />
@@ -44,9 +55,11 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/normalize/normalize" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/normalize/normalize" />
@@ -54,9 +67,11 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/query/query" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/query/query" />
@@ -64,9 +79,11 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/rawdata/rawdata" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/gradle-7.3.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/rawdata/rawdata" />
@@ -74,8 +91,11 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/relay/relay" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.4" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/microservices/relay/relay" />
