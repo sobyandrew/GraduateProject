@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 public class ConsumeKafka {
   private Integer count = 0;
-  private final List<DeviceInfo> devices; // = new ArrayList<>();
+  private final List<DeviceInfo> devices;
   private final ObjectMapper mapper;
   private final NormalizeService normalService;
   private final ProduceKafka kafka;
@@ -30,10 +30,10 @@ public class ConsumeKafka {
     mapper = new ObjectMapper();
   }
 
-  @KafkaListener(topics = "normal", groupId = "normal-service")
+  @KafkaListener(topics = "normal", groupId = "normal-service123")
   public void ingestMessage(String message) {
     count++;
-    // log.trace( count.toString()+ " messages received in normal service {}", message);
+    log.trace(count.toString() + " messages received in normal service {}", message);
     try {
       DeviceInfo di = mapper.readValue(message, DeviceInfo.class);
       devices.add(di);
@@ -58,7 +58,7 @@ public class ConsumeKafka {
       return;
     }
 
-    if (devices.size() > 100) {
+    if (devices.size() >= 5000) {
       normalService.storeDevices(devices);
       devices.clear();
     }

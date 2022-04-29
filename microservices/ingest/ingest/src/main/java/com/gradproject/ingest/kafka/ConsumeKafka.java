@@ -12,12 +12,11 @@ public class ConsumeKafka {
     public ConsumeKafka(ProduceKafka produceKafka) {
         this.produceKafka = produceKafka;
     }
-
+    Integer count = 0;
     @KafkaListener(topics = "ingest", groupId = "ingest-service")
     public void ingestDataMessage(String data){
-        log.trace("data message received {}", data);
-        log.trace("sending to normal and raw services");
         produceKafka.sendNormal(data);
         produceKafka.sendRaw(data);
+        log.trace("sent {} messages", ++count);
     }
 }

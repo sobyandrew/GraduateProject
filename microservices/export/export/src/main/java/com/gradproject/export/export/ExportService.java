@@ -31,9 +31,9 @@ public class ExportService {
       log.trace(e.getMessage());
       return f;
     }
+
     log.trace("done writing file");
     return f;
-    //        JsonNode jTree = mapper.readTree(devices);
   }
 
   public File getCSV(File jsonFile){

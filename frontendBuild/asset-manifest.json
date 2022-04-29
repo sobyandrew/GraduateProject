@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bb0b0d21.css",
+    "main.js": "/static/js/main.5ff77a57.js",
+    "static/media/winnie2.jpg": "/static/media/winnie2.0a9d6123748443fce729.jpg",
+    "static/media/winnie3.jpg": "/static/media/winnie3.a60dbe3246861ee2f17e.jpg",
+    "static/media/winnie4.jpg": "/static/media/winnie4.bf409f04c093d93bb643.jpg",
+    "static/media/Winston.jpg": "/static/media/Winston.1cb87f4429f63028d791.jpg",
+    "index.html": "/index.html",
+    "main.bb0b0d21.css.map": "/static/css/main.bb0b0d21.css.map",
+    "main.5ff77a57.js.map": "/static/js/main.5ff77a57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb0b0d21.css",
+    "static/js/main.5ff77a57.js"
+  ]
+}

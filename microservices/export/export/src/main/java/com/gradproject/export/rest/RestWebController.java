@@ -30,15 +30,6 @@ public class RestWebController {
     this.es = es;
   }
 
-  @PostMapping(path = "/query", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<String> postQuery(@RequestBody QueryRequest qr) {
-    log.trace("QueryRequest received {}", qr);
-    log.trace(qr.getQuery());
-    StringBuilder sb = new StringBuilder();
-//    sb.append("{\"queryResults\":" + qs.getQuery(qr.getQuery()) + "}");
-    return new ResponseEntity<>(sb.toString(), HttpStatus.OK);
-  }
-
   @GetMapping(path = "/health")
   public ResponseEntity<String> getHealth() {
     log.trace("health check succeeded");
@@ -80,7 +71,7 @@ public class RestWebController {
     File f = es.createCSV(devices);
     File f2 = es.getCSV(f);
     try {
-      InputStreamResource resource = new InputStreamResource(new FileInputStream(f2));
+      InputStreamResource resource = new InputStreamResource(new FileInputStream(f));
       return new ResponseEntity<>(resource,HttpStatus.OK);
     } catch (FileNotFoundException e) {
       e.printStackTrace();
@@ -118,29 +109,5 @@ public class RestWebController {
       e.printStackTrace();
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-  }
-
-//  public String deviceOutput(List<DeviceInfo> devices){
-//    log.trace("creating output");
-//    StringBuilder sb = new StringBuilder();
-//    Integer count = 0;
-//    sb.append("{ \"devices\": [");
-//    for(DeviceInfo device : devices){
-//      if(count > 0){
-//        sb.append(",");
-//      }
-//      sb.append("{\"id\": \""+device.id + "\", \"deviceId\": \"" + device.deviceId + "\",");
-//      sb.append("\"timestamp\": \""+device.timestamp + "\", \"temperature\": \"" + device.temperature + "\",");
-//      sb.append("\"humidity\": \""+device.humidity + "\"}");
-//      count++;
-//
-//    }
-//    sb.append("]}");
-//    return sb.toString();
-//  }
-
-  @Data
-  public static class QueryRequest implements Serializable {
-    private String query;
   }
 }

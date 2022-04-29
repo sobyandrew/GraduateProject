@@ -1,0 +1,17 @@
+.alarm{
+    background-color: #e3e0cf;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+.alarms{
+    display: inline-block;
+    background-color: #c5d5cb;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.area{
+    background-color: #c2b09d;
+    display: inline-block;
+}
