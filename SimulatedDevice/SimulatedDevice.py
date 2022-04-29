@@ -10,6 +10,7 @@ from random import randrange
 
 numSimulatedDevices = 300
 numMessagesPerDevice = 100
+numSent = 0
 
 # numSimulatedDevices = 600
 # numMessagesPerDevice = 50
@@ -29,7 +30,6 @@ def getMessage(clientNum):
     randRow = randrange(len(rows))
     retStr = "{\"id\":\"" + str(uuid.uuid4()) + "\", \"deviceId\":\"" + clientNum + "\", \"timestamp\":\"" \
              + str(datetime.datetime.now()) + "\", \"humidity\":" + "\"" + rows[randRow][1] + "\", \"temperature\":" + "\"" + rows[randRow][0] + "\"" + "}"
-    #print(retStr)
     return retStr
 
 
@@ -38,7 +38,7 @@ def send(client, topic, clientNum):
 
 
 def createClientAndCallSend(clientNum):
-    clientUUID = "client" + str(uuid4())
+    clientUUID = "client" + str(uuid4()) #+ clientNum #+ str(uuid4())
     cli = mqtt.Client(clientUUID, True)
     cli.connect("localhost", 443, 60)
 
@@ -51,7 +51,7 @@ def createClientAndCallSend(clientNum):
         # if count >= numMessagesPerDevice:
         #     return
         count = count + 1
-
+    cli.disconnect()
 
 
 threads = []
@@ -70,4 +70,3 @@ time_diff = (end_time - start_time)
 execution_time = time_diff.total_seconds() * 1000
 print(execution_time)
 print("total messages sent = " +  str((numMessagesPerDevice * numSimulatedDevices)))
-

@@ -5,7 +5,7 @@ function Alarm() {
     const [alarms, setAlarms] = useState([])
     let count = 1;
     useEffect(() => {
-        fetch('http://localhost:8083/getAlarms')
+        fetch('http://localhost:8080/alarm/getAlarms')
             .then(response => response.json())
             .then(data => setAlarms(data));
     }, [])
