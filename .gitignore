@@ -10,3 +10,5 @@ Infrastructure/kafka/zookeeper-data/version-2/snapshot.c3
 .idea/compiler.xml
 *.d7
 *.d8
+*.ea
+*.eb
