@@ -63,24 +63,14 @@ The front end was built using React and contains four separate pages.
 *Note: All of these commands will assume that you are currently in the root of this project directory for clarity*
 ## Prerequisites for Running
 1. Must be running on Windows 10 64-bit system
-<br>
-<br>
 2. Must download graduate project repo or zip of the repo
-   <br>
-   <br>
 3. Have Java / Gradle / MongoDB / PostgreSQL Server / NodeJS / Python installed
-   <br>
-   <br>
-4. pip install paho-mqtt
+4. pip install paho-mqtt 
 - run **pip install paho-mqtt** to install the python package required to connect to mqtt
-   <br>
-   <br>
 5. Start MongoDB and PostgreSQL Server
 - this project, MongoDB doesn't require a username or password. If your system requires a username or password to insert and create collections, some steps will need to change later.
 - For this project, a PostgreSQL user is created with the ability to create, insert, and query from tables. The username for my project is: postgres, and the password is: password.
 - This is chosen for simplicity, but if your system does not have this same user, then steps later will need to be updated to reflect this
-  <br>
-  <br>
 5. Configure log directories for Apache ZooKeeper and Apache Kafka by setting zookeeper.properties file and server.properties file variables
 - open the file located Infrastructure\kafka\config\zookeeper.properties
 - **change line 19** to a location to store logs for Zookeeper on your system
