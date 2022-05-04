@@ -138,8 +138,6 @@ The front end was built using React and contains four separate pages.
 - start the development server using the following command
 - **npm start**
 - keep terminal open and running
-<br>
-<br>
 - USING NPX SERVE on the react build
 - open new terminal
 - cd into the frontendBuild folder using the following command
@@ -147,12 +145,8 @@ The front end was built using React and contains four separate pages.
 - run the front end using the following command
 - **npx serve**
 - keep terminal up and running
-<br>
-<br>
 ### CHECKPOINT
 At this point there should be 12 terminals up and running. 1 for Apache Zookeeper, 1 for Apache Kafka, 1 for the MQTT Broker, 8 for the microservices where each microservice has its own terminal, and 1 for the front end.
-<br>
-<br>
 At this point the whole system is up and running as long as the PostgreSQL server is running on localhost at port 5432, MongoDB is running on localhost at port 27017 , Kafka is up and running on localhost on port 9092 from the previous steps(with Zookeeper managing it), MQTT is up and running on localhost with port 433, and the front end is running on localhost port 3000 or another specified port then the whole system is up and running.
 7. run python simulated device: 
 - open a new terminal
