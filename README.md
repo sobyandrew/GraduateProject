@@ -6,28 +6,20 @@ There are four significant sections in this project the Infrastructure, Simulate
 ---
 ### 1. Infrastructure
 The Infrastructure is combined of 5 main sections Apache Zookeeper, Apache Kafka, MQTT Broker, PostgreSQL Server, and MongoDB.
-<br>
-<br>
- 1. **Apache Zookeeper** - this is used to manage the Apache Kafka instance and is included inside the Infrastructure\kafka folder as binaries
-<br>
-<br>
- 2. **Apache Kafka** - this is used as a message queue for the microservices to communicate between and is included inside the Infrastructure\kafka folder as binaries.
-<br>
-<br>
+
+1. **Apache Zookeeper** - this is used to manage the Apache Kafka instance and is included inside the Infrastructure\kafka folder as binaries
+
+2. **Apache Kafka** - this is used as a message queue for the microservices to communicate between and is included inside the Infrastructure\kafka folder as binaries.
+
 - These binaries for Kafka / Zookeeper were downloaded from the latest scala version at the time of making this from: https://kafka.apache.org/downloads
 
-<br>
-
 3. **MQTT Broker** - This is used as a lightweight broker to communicate from simulate IoT devices and to the relay microservice this is included in the Infrastructure\MQTTBroker folder as binaries 
-<br>
-<br>
+
 - The MQTT Broker binaries were downloaded following this guide: http://www.steves-internet-guide.com/install-mosquitto-broker/#manual
 
-<br>
 
 4. **PostgreSQL Server** - This is used as a SQL database to show ease of normalizing device data as well as querying it from the microservices
-<br>
-<br>
+
 5. **MongoDB** - This is used as a document store for device messages to always store the unchanged original message. It is also used for exporting this information for further analysis
 
 ---
@@ -62,11 +54,12 @@ The front end was built using React and contains four separate pages.
 # Running this Project
 *Note: All of these commands will assume that you are currently in the root of this project directory for clarity*
 ## Prerequisites for Running
+
 1. Must be running on Windows 10 64-bit system
 2. Must download graduate project repo or zip of the repo
 3. Have Java / Gradle / MongoDB / PostgreSQL Server / NodeJS / Python installed
 4. pip install paho-mqtt 
-- run **pip install paho-mqtt** to install the python package required to connect to mqtt
+- run **pip install paho-mqtt** to install the python package required to connect to mqtt for the simulated devices
 5. Start MongoDB and PostgreSQL Server
 - this project, MongoDB doesn't require a username or password. If your system requires a username or password to insert and create collections, some steps will need to change later.
 - For this project, a PostgreSQL user is created with the ability to create, insert, and query from tables. The username for my project is: postgres, and the password is: password.
@@ -78,8 +71,6 @@ The front end was built using React and contains four separate pages.
 - open the file located Infrastructure\kafka\config\server.properties
 - **change line 62** to a location to store logs for Kafka on your system
 - ex: log.dirs=c:/users/Andrew Soby/Documents/GitHub/GraduateProject/Infrastructure/kafka/kafka-logs
-  <br>
-  <br>
 6. Move the whole Infrastructure\kafka folder to the root of your SYSTEMS drive
 - I placed this at the lowest level possible on my C drive at location C:\kafka after moving it
 - THIS IS AN IMPORTANT STEP BECAUSE WHEN RUNNING ZOOKEEPER AND KAFKA IT WILL GIVE AN INPUT TOO LONG ERROR IF THERE ARE TOO MANY DIRECTORIES INFRONT OF THE LOCATION OF KAFKA
