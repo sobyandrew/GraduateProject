@@ -12,9 +12,6 @@ numSimulatedDevices = 300
 numMessagesPerDevice = 100
 numSent = 0
 
-# numSimulatedDevices = 600
-# numMessagesPerDevice = 50
-
 file = open('log_temp.csv')
 
 csvreader = csv.reader(file)
@@ -38,18 +35,15 @@ def send(client, topic, clientNum):
 
 
 def createClientAndCallSend(clientNum):
-    clientUUID = "client" + str(uuid4()) #+ clientNum #+ str(uuid4())
+    clientUUID = "client" + str(uuid4())
     cli = mqtt.Client(clientUUID, True)
     cli.connect("localhost", 443, 60)
 
     count = 0
 
     while count < numMessagesPerDevice:
-        # count = count + 1
         send(cli, clientUUID, clientNum)
-        #sleep(0.1)
-        # if count >= numMessagesPerDevice:
-        #     return
+        sleep(0.001)
         count = count + 1
     cli.disconnect()
 

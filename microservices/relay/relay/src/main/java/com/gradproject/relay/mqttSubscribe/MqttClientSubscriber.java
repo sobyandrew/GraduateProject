@@ -18,6 +18,7 @@ public class MqttClientSubscriber {
   private final MqttClientConnector mqtt;
   private final SendKafka sendKafka;
 
+  private Integer count =0;
   @Autowired
   public MqttClientSubscriber(MqttClientConnector mqtt, SendKafka sendKafka) {
     this.mqtt = mqtt;
@@ -32,7 +33,8 @@ public class MqttClientSubscriber {
 
   private void getPayloadAndSend(Mqtt5Publish payload, BiConsumer<String, String> callback) {
     final var payloadBytes = payload.getPayloadAsBytes();
-    log.trace("parse payload");
+    count++;
+//    log.trace("parse payload");
     if (payloadBytes.length == 0) {
       log.trace("no payload in message");
       return;
@@ -40,14 +42,14 @@ public class MqttClientSubscriber {
 
     final var topic = payload.getTopic().getLevels().get(0);
 
-    log.trace("topic: " + topic);
-
+//    log.trace("topic: " + topic);
+    log.trace("message count " + count.toString());
     callback.accept(topic, new String(payload.getPayloadAsBytes(), StandardCharsets.UTF_8));
     return;
   }
 
   public void sendKafka(String topic, String payload) {
-    log.trace("sending to kafka");
+//    log.trace("sending to kafka");
     sendKafka.sendKafkaMessage(payload);
   }
 

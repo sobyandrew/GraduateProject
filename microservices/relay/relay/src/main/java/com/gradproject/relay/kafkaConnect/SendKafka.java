@@ -14,7 +14,7 @@ public class SendKafka {
     }
 
     public void sendKafkaMessage(String message){
-        log.trace("sending message to kafka");
+//        log.trace("sending message to kafka");
         kafka.send("ingest", message);
 
     }
