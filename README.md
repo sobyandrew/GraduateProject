@@ -11,11 +11,13 @@ The Infrastructure is combined of 5 main sections Apache Zookeeper, Apache Kafka
 
 2. **Apache Kafka** - this is used as a message queue for the microservices to communicate between and is included inside the Infrastructure\kafka folder as binaries.
 
-- These binaries for Kafka / Zookeeper were downloaded from the latest scala version at the time of making this from: https://kafka.apache.org/downloads
+- These binaries for Kafka / Zookeeper were downloaded from the latest scala version at the time of making this from: 
+- https://kafka.apache.org/downloads
 
 3. **MQTT Broker** - This is used as a lightweight broker to communicate from simulate IoT devices and to the relay microservice this is included in the Infrastructure\MQTTBroker folder as binaries 
 
-- The MQTT Broker binaries were downloaded following this guide: http://www.steves-internet-guide.com/install-mosquitto-broker/#manual
+- The MQTT Broker binaries were downloaded following this guide: 
+- http://www.steves-internet-guide.com/install-mosquitto-broker/#manual
 
 
 4. **PostgreSQL Server** - This is used as a SQL database to show ease of normalizing device data as well as querying it from the microservices
@@ -27,7 +29,8 @@ The Infrastructure is combined of 5 main sections Apache Zookeeper, Apache Kafka
 
 The simulated device is built using multithreading in a Python Script. This emulates multiple devices and can send a large amount of messages. The messages it sends are from a modified Kaggle dataset from real IoT device data sending Humidity and Temperature information. The script is located in the SimulatedDevice directory.
 
-- Kaggle Iot Dataset was retrieved from this link: https://www.kaggle.com/datasets/edotfs/dht11-temperature-and-humidity-sensor-1-day
+- Kaggle Iot Dataset was retrieved from this link: 
+- https://www.kaggle.com/datasets/edotfs/dht11-temperature-and-humidity-sensor-1-day
 
 ---
 ### 3. Microservices
@@ -74,7 +77,8 @@ The front end was built using React and contains four separate pages.
 6. Move the whole Infrastructure\kafka folder to the root of your SYSTEMS drive
 - I placed this at the lowest level possible on my C drive at location C:\kafka after moving it
 - THIS IS AN IMPORTANT STEP BECAUSE WHEN RUNNING ZOOKEEPER AND KAFKA IT WILL GIVE AN INPUT TOO LONG ERROR IF THERE ARE TOO MANY DIRECTORIES INFRONT OF THE LOCATION OF KAFKA
-- this issue is noted here and can be fixed by moving it close to the root of your system as I mentioned: https://stackoverflow.com/questions/48834927/the-input-line-is-too-long-when-starting-kafka
+- this issue is noted here and can be fixed by moving it close to the root of your system as I mentioned: 
+- https://stackoverflow.com/questions/48834927/the-input-line-is-too-long-when-starting-kafka
 
 ## Commands to Run with Instructions
 1. run zookeeper:
