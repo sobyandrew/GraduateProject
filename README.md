@@ -100,6 +100,9 @@ If you have a windows 10 machine you can easily run this system instead of copy 
 4. run runDevice.bat - this is optional it just runs the simulated device again
    1. if step 3 was ran succesfully then this does not need to be done but can be to send more messages
    2. **double click the runDevice.bat** in file explorer
+   
+## Video Demo  Link of Running using .bat files
+-TODO
 
 ## Commands to Run with Instructions
 1. run zookeeper:
@@ -186,6 +189,7 @@ Here is the link to the project repository hosted on Github
 ---
 # Project Documentation Link
 Here is the link to the final project documentation
-- TODO
+- https://docs.google.com/document/d/1uvZE0ELrH37RofqHq1KYsZ1QRHNZOM1C/edit?usp=sharing&ouid=108393592710401530849&rtpof=true&sd=true
+
 
 
