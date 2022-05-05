@@ -8,7 +8,7 @@ import time
 from time import sleep
 from random import randrange
 
-numSimulatedDevices = 300
+numSimulatedDevices = 100
 numMessagesPerDevice = 100
 numSent = 0
 
@@ -43,7 +43,7 @@ def createClientAndCallSend(clientNum):
 
     while count < numMessagesPerDevice:
         send(cli, clientUUID, clientNum)
-        sleep(0.001)
+        sleep(0.005)
         count = count + 1
     cli.disconnect()
 
