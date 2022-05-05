@@ -102,7 +102,9 @@ If you have a windows 10 machine you can easily run this system instead of copy 
    2. **double click the 4-runDevice.bat** in file explorer
    
 ## Video Demo  Link of Running using .bat files
--TODO
+- This video link takes you through the process of running the pre-reqs for the system as well as running the system end to end if there are any questions this guide should be helpful.
+- https://youtu.be/LFfc9iw0jk0
+
 
 ## Commands to Run with Instructions
 1. run zookeeper:
@@ -182,6 +184,7 @@ if there are any questions getting set up feel free to reach out to me at **soby
 # DEMO LINK
 Here is a provided link to the demo of this project that can be seen here if there are difficulties running: 
 - https://youtu.be/Ypzu24bc1yc
+- running using bat files: https://youtu.be/LFfc9iw0jk0
 ---
 # Project Repository link
 Here is the link to the project repository hosted on Github
