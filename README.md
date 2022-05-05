@@ -83,21 +83,21 @@ The front end was built using React and contains four separate pages.
 ## Run Project using .bat files
 If you have a windows 10 machine you can easily run this system instead of copy and pasting all the commands that I have included
 - to begin this section all you need to do is ensure the prerequisites are set up and the kafka folder is located at C:\kafka
-1. Run runKafka.bat - this starts zookeeper and kafka
+1. Run 1-runKafka.bat - this starts zookeeper and kafka
    1. **double click the 1-runKafka.bat** in file explorer
    2. this requires the previous kafka folder to be located at C:\kafka
    3. two command prompts should be running after about 20 seconds of Zookeeper first then Kafka
    4. leave these 2 terminal windows up and running for the remainder of the session
    5. if Kafka does not start delete the kafka log folder and re try again set in server.properties
-2. run createTopics.bat **ONLY NEEDS TO BE DONE IF TOPICS DON'T ALREADY EXIST**
+2. run 2-createTopics.bat **ONLY NEEDS TO BE DONE IF TOPICS DON'T ALREADY EXIST**
    1. **double click the 2-createTopics.bat** in file explorer
    2. this will cause an error if the topics already exist but nothing bad happens because of the error
    3. these 4 terminals that are opened can be closed
-3. run runProj.bat - this starts an MQTT Broker, then the eight microservices, then the web front end, then runs the simulated device once
+3. run 3-runProj.bat - this starts an MQTT Broker, then the eight microservices, then the web front end, then runs the simulated device once
    1. **double click the 3-runProj.bat** in file explorer
    2. this will require PostgreSQL and MongoDB to be running already as mentioned earlier as well as pip install paho-mqtt to be done
    3. this opens 10 more terminal windows and all must be kept open for the remainder of testing for a total of 12 open
-4. run runDevice.bat - this is optional it just runs the simulated device again
+4. run 4-runDevice.bat - this is optional it just runs the simulated device again
    1. if step 3 was ran succesfully then this does not need to be done but can be to send more messages
    2. **double click the 4-runDevice.bat** in file explorer
    
