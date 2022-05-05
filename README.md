@@ -195,4 +195,8 @@ Here is the link to the final project documentation
 - https://docs.google.com/document/d/1uvZE0ELrH37RofqHq1KYsZ1QRHNZOM1C/edit?usp=sharing&ouid=108393592710401530849&rtpof=true&sd=true
 
 
+dataDir=c:/users/Andrew Soby/Documents/GitHub/GraduateProject/Infrastructure/kafka/zookeeper-data
+
+log.dirs=c:/users/Andrew Soby/Documents/GitHub/GraduateProject/Infrastructure/kafka/kafka-logs
+
 
