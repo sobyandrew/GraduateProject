@@ -59,6 +59,8 @@ public class QueryService {
       }
       stringBuilder.append("]");
       log.trace(stringBuilder.toString());
+      s.close();
+      c.close();
       return stringBuilder.toString();
     } catch (SQLException e) {
       log.trace(e.getMessage());
